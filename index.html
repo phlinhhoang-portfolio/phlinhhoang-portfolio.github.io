@@ -447,6 +447,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
   line-height: 1.7;
 }
 
+/* ── Report card ──────────────────────── */
+.report-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: 24px; align-items: start; margin-bottom: 12px; }
+.report-grid figure { margin: 0; }
+.report-notes { list-style: none; counter-reset: note; display: grid; gap: 12px; }
+.report-notes li { counter-increment: note; position: relative; padding-left: 30px; font-size: 13px; color: var(--text-3); line-height: 1.6; }
+.report-notes li::before { content: counter(note); position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: var(--callout); border: 1px solid var(--border); font-size: 11px; font-weight: 700; color: var(--text-2); display: flex; align-items: center; justify-content: center; }
+.report-notes strong { color: var(--text); font-weight: 600; }
+@media (max-width: 620px) { .report-grid { grid-template-columns: 1fr; } }
+
+
 /* ── Responsive ───────────────────────── */
 @media (max-width: 620px) {
   .page { padding: 0 16px 60px; }
@@ -523,7 +533,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
   <section class="section-block" aria-labelledby="projects-heading">
     <p class="section-label" aria-hidden="true">Work Samples</p>
     <h2 class="section-title" id="projects-heading">Projects</h2>
-    <p class="section-desc">Eight selected samples across campaign, editorial, social, video, reporting, and strategy — produced for a national public-health research institution. The first three samples include live links to the published work; all samples include production context and editorial decisions.</p>
+    <p class="section-desc">Nine selected samples across campaign, editorial, social, video, reporting, and strategy — produced for a national public-health research institution. Five samples link to the published work, and all samples include production context and editorial decisions.</p>
 
     <div class="cards-grid">
 
@@ -569,7 +579,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
       </div>
 
       <!-- Card 3: Brand Governance -->
-      <div class="card" style="grid-column:1/-1;">
+      <div class="card" style="grid-column:1/-1;border-bottom:1px solid var(--border);">
         <div class="card-label">Internal policy &amp; strategy frameworks</div>
         <h3 class="card-title">Brand governance &amp; content strategy</h3>
         <p class="card-desc">At the Atlas Institute I developed and owned the social media policy from scratch — covering employee conduct, visitor interaction rules, copyright compliance, and a structured PR crisis response matrix. Governance responsibilities also included applying and contributing to the Style Guide (v3, June 2023), producing the Digital Strategy Report (April–June 2023), and briefing, directing, and evaluating external agency deliverables.</p>
@@ -579,6 +589,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
           <span class="tag">Style Guide</span>
           <span class="tag">Digital Strategy</span>
           <span class="tag">Agency Briefing</span>
+        </div>
+      </div>
+
+      <!-- Card: Monthly Analytics Report -->
+      <div class="card" style="grid-column:1/-1;">
+        <div class="card-label">Monthly leadership report · August–December 2023</div>
+        <h3 class="card-title">Analytics at a glance — Monthly web, social &amp; email report</h3>
+        <p class="card-desc">I designed this one-page report and sent it to Atlas Institute leadership and the team every month. Each design choice came from a single question: what does a busy reader need from these numbers?</p>
+        <div class="report-grid">
+          <figure>
+            <img src="images/2fe848af-729c-4966-942d-372c697bfa0f.jpg" alt="Analytics at a glance, December 2023: website totals with month-over-month change, top five pages, top three downloads, social media highlights and email marketing results" class="card-img" loading="lazy">
+            <figcaption class="card-img-label">↑ December 2023 issue. All five reports from August to December follow this template.</figcaption>
+          </figure>
+          <ol class="report-notes">
+            <li><strong>Headline numbers come first.</strong> The website totals sit at the top in large type, so a reader gets the month's overall picture in a few seconds.</li>
+            <li><strong>Every number has a comparison.</strong> Each total shows its change from the previous month with a green or red arrow. The arrow tells leadership the direction of each figure at a glance.</li>
+            <li><strong>Top pages show what audiences use.</strong> The top five pages and top three downloads reveal which resources people came for. These lists point the team toward topics that draw readers.</li>
+            <li><strong>Plain-language definitions.</strong> Terms like impressions and engagements carry a short definition under the label. Readers from any department can follow every figure.</li>
+            <li><strong>Each channel has its own zone.</strong> Website data fills the top half. Social media and email sit side by side below it, so each channel reads as its own story.</li>
+            <li><strong>Zeros stay visible.</strong> The email section reported zero new subscribers across these months. Showing the gap gave leadership an accurate base for decisions.</li>
+            <li><strong>The same template every month.</strong> Each issue kept an identical layout, so leadership could compare any two months side by side.</li>
+          </ol>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Analytics Reporting</span>
+          <span class="tag">Data Storytelling</span>
+          <span class="tag">Report Design</span>
+          <span class="tag">Web Analytics</span>
+          <span class="tag">Social Media Metrics</span>
+          <span class="tag">Email Metrics</span>
+          <span class="tag">Leadership Reporting</span>
         </div>
       </div>
 
